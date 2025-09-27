@@ -1,0 +1,5 @@
+{
+  "name": "Gestão de Prioridades",
+  "description": "Uma ferramenta de Gestão de Prioridades que usa a Matriz de Eisenhower para ajudar a organizar tarefas. Classifique por urgência e importância, salve no navegador e exporte como PDF.",
+  "requestFramePermissions": []
+}

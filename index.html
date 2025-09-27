@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão de Prioridades</title>
+    
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#1f2937" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+      body {
+        background-color: var(--color-background);
+        transition: background-color 0.3s ease;
+      }
+      :root, [data-theme='light'] {
+        --color-background: #f0f2f5;
+        --color-foreground: #ffffff;
+        --color-text-primary: #1f2937;
+        --color-text-secondary: #4b5563;
+        --color-border: #d1d5db;
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+        --color-primary-text: #ffffff;
+        --color-header: #1f2937;
+        --color-accent: #374151;
+
+        --quadrant-do-bg: #fee2e2;
+        --quadrant-do-border: #ef4444;
+        --quadrant-do-text: #b91c1c;
+
+        --quadrant-schedule-bg: #dcfce7;
+        --quadrant-schedule-border: #22c55e;
+        --quadrant-schedule-text: #15803d;
+
+        --quadrant-delegate-bg: #fef9c3;
+        --quadrant-delegate-border: #eab308;
+        --quadrant-delegate-text: #a16207;
+
+        --quadrant-eliminate-bg: #e5e7eb;
+        --quadrant-eliminate-border: #9ca3af;
+        --quadrant-eliminate-text: #4b5563;
+      }
+      [data-theme='dark'] {
+        --color-background: #111827;
+        --color-foreground: #1f2937;
+        --color-text-primary: #f9fafb;
+        --color-text-secondary: #9ca3af;
+        --color-border: #4b5563;
+        --color-primary: #3b82f6;
+        --color-primary-hover: #2563eb;
+        --color-primary-text: #ffffff;
+        --color-header: #f9fafb;
+        --color-accent: #f9fafb;
+
+        --quadrant-do-bg: #3f2222;
+        --quadrant-do-border: #ef4444;
+        --quadrant-do-text: #fca5a5;
+
+        --quadrant-schedule-bg: #1f382a;
+        --quadrant-schedule-border: #22c55e;
+        --quadrant-schedule-text: #86efac;
+
+        --quadrant-delegate-bg: #42381f;
+        --quadrant-delegate-border: #eab308;
+        --quadrant-delegate-text: #fde047;
+
+        --quadrant-eliminate-bg: #374151;
+        --quadrant-eliminate-border: #9ca3af;
+        --quadrant-eliminate-text: #d1d5db;
+      }
+      [data-theme='ocean'] {
+        --color-background: #e0f2fe;
+        --color-foreground: #ffffff;
+        --color-text-primary: #075985;
+        --color-text-secondary: #0369a1;
+        --color-border: #bae6fd;
+        --color-primary: #0ea5e9;
+        --color-primary-hover: #0284c7;
+        --color-primary-text: #ffffff;
+        --color-header: #0c4a6e;
+        --color-accent: #083344;
+        
+        --quadrant-do-bg: #ffedd5;
+        --quadrant-do-border: #f97316;
+        --quadrant-do-text: #c2410c;
+
+        --quadrant-schedule-bg: #ecfdf5;
+        --quadrant-schedule-border: #10b981;
+        --quadrant-schedule-text: #047857;
+
+        --quadrant-delegate-bg: #fefce8;
+        --quadrant-delegate-border: #facc15;
+        --quadrant-delegate-text: #ca8a04;
+
+        --quadrant-eliminate-bg: #f1f5f9;
+        --quadrant-eliminate-border: #94a3b8;
+        --quadrant-eliminate-text: #475569;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('SW registered: ', registration);
+          }).catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
